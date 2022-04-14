@@ -1,0 +1,111 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Thu Apr 14 14:50:00 2022
+| Host         : DESKTOP-06LMOH5 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+| Design       : design_1_wrapper
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    33 |
+|    Minimum number of control sets                        |    33 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    38 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    33 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    27 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             107 |           45 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              35 |           13 |
+| Yes          | No                    | No                     |              80 |           24 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             108 |           46 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------+----------------+--------------+
+|                Clock Signal                |                                                               Enable Signal                                                               |                     Set/Reset Signal                     | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------+----------------+--------------+
+|  design_1_i/seven_seg_0/inst/u1/o_clk_BUFG |                                                                                                                                           | design_1_i/seven_seg_0/inst/shifting_value[31]_i_1_n_0   |                2 |              4 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                                                                                                           | design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_int           |                2 |              4 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/controller_0/inst/fifo_wr_en                                                                                                   | design_1_i/controller_0/inst/FSM_onehot_state[3]_i_1_n_0 |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/proc_sys_reset_0/U0/SEQ/seq_cnt_en                                                                                             | design_1_i/proc_sys_reset_0/U0/SEQ/SEQ_COUNTER/clear     |                1 |              6 |         6.00 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                                                                                                           | design_1_i/proc_sys_reset_0/U0/peripheral_reset[3]       |                5 |             12 |         2.40 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                                                                                                           | design_1_i/seven_seg_0/inst/u1/o_clk_1                   |                4 |             15 |         3.75 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/reader_0/inst/p_0_in                                                                                                           |                                                          |                8 |             16 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/proc_sys_reset_0/U0/peripheral_aresetn[3]                                                                                      |                                                          |                4 |             16 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/controller_0/inst/fifo_out[15]_i_1_n_0                                                                                         |                                                          |                6 |             16 |         2.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                 | design_1_i/proc_sys_reset_0/U0/peripheral_reset[3]       |               16 |             16 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]_0[0] | design_1_i/proc_sys_reset_0/U0/peripheral_reset[3]       |                9 |             16 |         1.78 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/E[0]                                         | design_1_i/proc_sys_reset_0/U0/peripheral_reset[3]       |                4 |             20 |         5.00 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/button/inst/debounce_clock_0                                                                                                   | design_1_i/button/inst/debounce_clock[19]_i_1_n_0        |                5 |             20 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/ram_full_fb_i_reg_4                              |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/ram_full_fb_i_reg_2                              |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[8]_0                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[8]_1                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[9]_1                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[6]_0                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[7]_0                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[7]_1                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[9]_2                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[8]_2                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[9]_3                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/ram_full_fb_i_reg                                |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[9]_0                       |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/ram_full_fb_i_reg_0                              |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/ram_full_fb_i_reg_1                              |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/ram_full_fb_i_reg_3                              |                                                          |                6 |             22 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/main_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/ram_empty_fb_i_reg[0]                | design_1_i/proc_sys_reset_0/U0/peripheral_reset[3]       |               10 |             26 |         2.60 |
+|  CLK100MHZ_IBUF_BUFG                       | design_1_i/controller_0/inst/led[15]_i_1_n_0                                                                                              |                                                          |                6 |             32 |         5.33 |
+|  design_1_i/seven_seg_0/inst/u1/o_clk_BUFG |                                                                                                                                           |                                                          |               14 |             36 |         2.57 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                                                                                                           |                                                          |               32 |             72 |         2.25 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------+----------------+--------------+
+
+
